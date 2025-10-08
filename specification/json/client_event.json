@@ -1,5 +1,5 @@
 {
-  "title": "GULF Client Event Message",
+  "title": "A2UI Client Event Message",
   "description": "A message sent from the client to the server. Exactly ONE of the properties in this object must be set.",
   "type": "object",
   "properties": {
@@ -21,7 +21,7 @@
           "format": "date-time",
           "description": "An ISO 8601 timestamp of when the event occurred."
         },
-        "resolvedContext": {
+        "context": {
           "type": "object",
           "description": "A JSON object containing the key-value pairs from the component's `action.context`, after resolving all data bindings.",
           "additionalProperties": true
@@ -31,10 +31,10 @@
         "actionName",
         "sourceComponentId",
         "timestamp",
-        "resolvedContext"
+        "context"
       ]
     },
-    "clientCapabilities": {
+    "clientUiCapabilities": {
       "title": "Client Capabilities",
       "description": "A message from the client describing its capabilities, such as the component catalog it supports. Exactly ONE of the properties in this object must be set.",
       "type": "object",
@@ -44,7 +44,7 @@
           "description": "A URI pointing to a predefined component catalog schema."
         },
         "dynamicCatalog": {
-          "$ref": "https://raw.githubusercontent.com/google/gulf/refs/heads/main/schemas/v0.1/catalog.json"
+          "$ref": "https://raw.githubusercontent.com/google/a2ui/refs/heads/main/schemas/v0.1/catalog.json"
         }
       },
       "oneOf": [
