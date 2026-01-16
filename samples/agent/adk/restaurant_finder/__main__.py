@@ -88,12 +88,13 @@ def main(host, port):
         app = server.build()
 
         app.add_middleware(
-            CORSMiddleware,
-            allow_origin_regex=r"http://localhost:\d+",
-            allow_credentials=True,
-            allow_methods=["*"],
-            allow_headers=["*"],
-        )
+       CORSMiddleware,
+       allow_origins=["*"],  # <-- REQUIRED
+       allow_credentials=False,
+       allow_methods=["*"],
+       allow_headers=["*"],
+       )
+
 
         app.mount("/static", StaticFiles(directory="images"), name="static")
 
